@@ -1,1 +1,1 @@
-[DEMO](https://helena-herasymiuk.github.io/phone-catalog-react/)
+[DEMO](https://helena-herasymiuk.github.io/pcr-demo/)
