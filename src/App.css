@@ -1,11 +1,12 @@
 /* app css stylesheet */
-
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: #E7EFFD;
   color: black;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Comic Sans MS",sans-serif;
   font-size: 14px;
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -27,11 +28,41 @@ footer {
   margin: 20px 0 0;
 }
 
-header > h1,
-footer > h1 {
+header > h1 {
   margin: 0;
   line-height: 60px;
   color: #9466EA;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.phoneViewer,
+.cart,
+.filter{
+  width: 96%;
+  margin: 0 auto 20px;
+  padding: 1%;
+  border: 1px solid #9466EA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.catalog-block {
+  width: 96%;
+  margin: 0 auto 20px;
+  padding: 0;
+}
+
+.catalog {
+  padding-inline-start: 0;
+  list-style: none;
+  position: relative;
+  min-height: 1px;
+  width: 100%;
 }
 
 .phone-images {
@@ -43,20 +74,9 @@ footer > h1 {
   float: left;
 }
 
-.catalog {
-  list-style: none;
-  padding-inline-start: 0;
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  width: 97%;
-  margin: 0 auto 20px; 
-}
-
 .thumb {
   float: left;
-  margin: -0.5em 1em 1.5em 0;
+  margin-right: 5px;
   padding-bottom: 1em;
   height: 100px;
   width: 100px;
@@ -77,7 +97,8 @@ footer > h1 {
 }
 
 .phone {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
@@ -88,8 +109,8 @@ footer > h1 {
 
 .catalog li {
   clear: both;
-  height: 100px;
-  padding-top: 15px;
+  height: 120px;
+  padding: 10px;
 }
 
 a {
@@ -102,16 +123,23 @@ a:hover {
   text-decoration: underline;
 }
 
-p {
+.snippet {
+  display: block;
+  max-height: 60px;
+  /*max-width: 400px;*/
   margin: 5px 0 10px;
   font-size: 14px;
   line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn{
   color: #fff;
   background-color:  #9466EA;
   border-color: #E7EFFD;
+  border: 1px transparent;
+  border-radius: 4px;
   display: inline-block;
   padding: 6px 12px;
   margin-right: 10px;
@@ -119,13 +147,7 @@ p {
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
   cursor: pointer;
-  border: 1px solid transparent;
-  border-radius: 4px;
 }
 
 .cart_btn {
@@ -145,35 +167,45 @@ select {
   margin-left: 5px;
 }
 
-.phoneViewer,
-.cart,
-.filter {
-  width: 95%;
-  margin: 0 auto 20px; 
-  background-color: white;
-  padding: 5px 10px;
-  border: 1px solid #9466EA;
-  border-radius: 4px;
-}
-
 .phoneViewer {
   width: 96%;
   min-height: 400px;
   padding: 20px 0;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
 }
 
 .phoneViewer_info {
+  /*display: flex;*/
   box-sizing: border-box;
   margin: 5px;
   padding: 5px;
+  width: 98%;
+  max-width: 98%;
+  min-height: 400px;
 }
 
-img.phoneDetail {
+.phoneDetail {
+  margin: 0 20px;
+}
+
+/*@media only screen and (max-width: 620px) {*/
+/*  .phoneViewer_info {*/
+/*    flex-wrap: wrap;*/
+/*  }*/
+/*}*/
+
+img.phoneDetail.mainImage {
   float: left;
   background-color: white;
-  padding: 0;
+  padding: 10px;
   height: 400px;
   width: 400px;
+  max-width: 90%;
+  border: 1px solid silver;
+  border-radius: 20px;
+  margin: 20px;
+  margin-top: 0;
 }
 
 img.phone:first-child {
@@ -181,14 +213,17 @@ img.phone:first-child {
 }
 
 ul.phone-thumbs {
-  margin: 0;
+  margin: 5px;
+  margin-top: 30px;
   list-style: none;
+  padding-left: 20px;
 }
 
 ul.phone-thumbs li {
-  border: 1px solid black;
+  border: 1px solid silver;
+  border-radius: 10px;
   display: inline-block;
-  margin: 1em;
+  margin: 10px;
   background-color: white;
 }
 
@@ -202,26 +237,4 @@ ul.phone-thumbs img:hover {
   cursor: pointer;
 }
 
-
-ul.specs {
-  clear: both;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-ul.specs > li{
-  display: inline-block;
-  width: 200px;
-  vertical-align: top;
-}
-
-ul.specs > li > span{
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-ul.specs dt {
-  font-weight: bold;
-}
 
